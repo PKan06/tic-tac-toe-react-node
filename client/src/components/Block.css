@@ -1,0 +1,16 @@
+.block {
+  color: azure;
+  /* border: 2px solid green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transform: rotateY(0);
+  transition: transform 2s ease-in-out;
+}
+
+.block:hover {
+  background-color: rgb(68, 68, 68);
+}

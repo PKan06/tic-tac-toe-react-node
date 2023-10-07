@@ -1,0 +1,93 @@
+body {
+  background-color: black;
+  color: azure;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.title {
+  font-style: italic;
+}
+.block {
+  border: 2px solid white;
+  width: 100px;
+  height: 100px;
+}
+
+.container {
+  /* border: 2px solid green; */
+  text-align: center;
+}
+.boardcontainer {
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.board {
+  /* border: 2px solid red; */
+}
+.row {
+  /* border: 2px solid violet; */
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.players,
+.player {
+  /* border: 2px solid aqua; */
+}
+
+.player {
+  /* font-weight: 500; */
+  margin: 5px 0px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.historyContiner {
+  /* border: 2px solid blue; */
+  width: 70%;
+  text-align: left;
+}
+
+.historyContiner p {
+  text-align: center;
+}
+
+.multiplayer {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.multiplayer button,
+.boardcontainer button {
+  padding: 5px 20px;
+}
+.multiplayer button:hover,
+.boardcontainer button:hover {
+  color: bisque;
+  background-color: rgb(83, 83, 83);
+  border-radius: 5px;
+}
+
+.players span {
+  font-weight: 700;
+}
+
+.boardcontainer p span {
+  font-weight: 600;
+}
+.boardcontainer p span:hover {
+  color: bisque;
+  cursor: pointer;
+}
