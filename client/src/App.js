@@ -5,6 +5,9 @@ import io from "socket.io-client";
 import copy from "copy-to-clipboard";
 let socket;
 function App() {
+  const serverURL =`${ process.env.SERVERURL || process.env.REACT_APP_SERVERURL}`;
+  const shareURL = `${process.env.SHAREURL || process.env.REACT_APP_SHAREURL}`;
+  // console.log(serverURL,shareURL,process.env)
   const [room, setRoom] = useState("");
   const [editRoom, setEditRoom] = useState(false);
   const [MultiplayerBox, setMultiplayerBox] = useState(false);
@@ -26,12 +29,12 @@ function App() {
 
   const joinRoom = () => {
     if (room !== "") {
-      socket = io.connect(process.env.SERVERURL || process.env.REACT_APP_SERVERURL);
+      socket = io.connect(serverURL);
       socket.emit("join_room", room);
       setEditRoom(true);
     }
   };
-  const sendMessage = (state: any[]) => {
+  const sendMessage = (state) => {
     if (editRoom === true) {
       socket.emit("user-move", {
         message: state,
@@ -43,7 +46,7 @@ function App() {
     }
   };
 
-  const checkWinner = (state: any[]) => {
+  const checkWinner = (state) => {
     const win = [
       [0, 1, 2],
       [3, 4, 5],
@@ -119,8 +122,8 @@ function App() {
   };
 
   const copyToClipboard = () => {
-    copy(process.env.REACT_APP_SHAREURL);
-    alert(`You have copied "${process.env.SHAREURL || process.env.REACT_APP_SHAREURL}" share with other player`);
+    copy(shareURL);
+    alert(`Copied URL to clipboard successfully "${shareURL}" share with other player`);
   };
 
   useEffect(() => {
